@@ -1,36 +1,27 @@
 package problems.Arrays.Easy.check_if_array_is_sorted_and_rotated;
 
 /*
- * Problem: 
- * LeetCode: 
- * Difficulty: 
- * 
- * Date: 2025-08-25
- * Status: 
+ * Link: https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/description/
  */
 
 class Solution {
-    
-    // Approach 1: 
-    // Time: O(), Space: O()
-    public int approach1(int[] nums) {
-        return 0;
-    }
-    
-    // Approach 2: 
-    // Time: O(), Space: O()
-    public int approach2(int[] nums) {
-        return 0;
-    }
-    
-    // Approach 3: 
-    // Time: O(), Space: O()
-    public int approach3(int[] nums) {
-        return 0;
-    }
-}
+    public boolean check(int[] nums) {
+        int drop = 0;
+        int n = nums.length;
 
+        if (nums[0] < nums[n-1]) {
+            drop ++;
+        }
+        for (int i=0; i<n-1; i++) {
+            if (nums[i+1] < nums[i]) {
+                drop++;
+            }
+            if (drop > 1) {
+                return false;
+            }
+        }
 
-public class solution {
-    
+        return true;
+
+    }
 }
